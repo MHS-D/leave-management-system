@@ -21,8 +21,8 @@ This is a demo Laravel9-based dashboard-style backend system designed to manage 
 ### Prerequisites
 - PHP 8.0 or higher
 - Composer
-- MySQL or MariaDB
 - Git
+
 ### Installation
 
 1. **Clone the repository**
