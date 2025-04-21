@@ -3,7 +3,7 @@
 
 ## 🧾 Project Overview
 
-This is a demo Laravel-based dashboard-style backend system designed to manage employee leave requests. It allows employees to submit leave requests and enables admins/managers to review, approve, or reject them.
+This is a demo Laravel9-based dashboard-style backend system designed to manage employee leave requests. It allows employees to submit leave requests and enables admins/managers to review, approve, or reject them.
 
 ---
 
@@ -17,6 +17,13 @@ This is a demo Laravel-based dashboard-style backend system designed to manage e
 ---
 
 ## 🛠 Setup Instructions
+
+### Prerequisites
+- PHP 8.0 or higher
+- Composer
+- MySQL or MariaDB
+- Git
+### Installation
 
 1. **Clone the repository**
    ```bash
