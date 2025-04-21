@@ -14,8 +14,6 @@ This is a demo Laravel-based dashboard-style backend system designed to manage e
 - ✅ Each request has a status: `Pending`, `Approved`, or `Rejected`
 - ✅ Role-based authentication and access control (Employee vs Admin)
 - ✅ User management with roles
-- ✅ Departments association (optional but implemented)
-
 ---
 
 ## 🛠 Setup Instructions
@@ -29,7 +27,6 @@ This is a demo Laravel-based dashboard-style backend system designed to manage e
 2. **Install dependencies**
    ```bash
    composer install
-   npm install && npm run dev
    ```
 
 3. **Configure the environment**
