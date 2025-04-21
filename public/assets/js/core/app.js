@@ -1184,11 +1184,12 @@ function confirmDelete(url, method = 'DELETE', config = {}) {
 	// config.ajax = config.ajax || true;
 
 	Swal.fire({
-		title: 'هل انت متأكد؟',
-		text: "لن تتمكن من التراجع عن هذا!",
+		title: 'Are you sure?',
+		text: 'You won\'t be able to revert this!',
 		icon: 'warning',
 		showCancelButton: true,
-		confirmButtonText: 'نعم, احذف!',
+		confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'Cancel',
 		customClass: {
 			confirmButton: 'btn btn-danger',
 			cancelButton: 'btn btn-outline-info ms-1'
@@ -1218,8 +1219,8 @@ function confirmDelete(url, method = 'DELETE', config = {}) {
 					}
 
 					Swal.fire({
-						icon: 'تم بنجاح !',
-						title: 'تم الحذف بنجاح',
+						icon: 'success',
+						title: 'Deleted!',
 						text: result.message,
 						customClass: {
 							confirmButton: 'btn btn-success'

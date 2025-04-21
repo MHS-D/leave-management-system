@@ -69,15 +69,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                {{-- Permissions according to role --}}
-                                {{-- <div class="mb-1" id="permissions-by-role__div">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="permissions_by_role"
-                                            id="permissions-by-role__input" value="1" />
-                                        <label class="form-check-label" for="permissions-by-role__input">Permissions by
-                                            role</label>
-                                    </div>
-                                </div> --}}
+
                                 {{-- Role --}}
                                 <div class="mb-1" id="roles__div">
                                     <label class="form-label" for="role">{{ __('strings.ROLE') }}</label>
@@ -88,16 +80,6 @@
                                         @endforeach
                                     </select>
                                 </div>
-
-                                {{-- Direct Permissions --}}
-                                {{-- <div class="mb-1" id="permissions__div">
-                                    <label class="form-label" for="permissions">Permissions</label>
-                                    <select class="select2 form-select" id="permissions" name="permissions[]" multiple>
-                                        @foreach ($permissions as $permission)
-                                            <option value="{{ $permission->id }}">{{ $permission->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div> --}}
 
                                 <button type="submit" class="btn btn-primary me-1 btn-submit">{{ __('strings.SAVE') }}</button>
                                 <button type="reset" class="btn btn-outline-secondary"

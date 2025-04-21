@@ -3,10 +3,11 @@
 namespace App\Providers;
 
 
-use App\Models\Project;
-use App\Models\Project as ModelsProject;
+use App\Models\LeaveRequest;
+use App\Models\LeaveRequest as ModelsProject;
 use App\Models\Setting;
-use App\Policies\ProjectPolicy;
+use App\Models\User;
+use App\Policies\LeaveRequestPolicy;
 use App\Policies\SettingPolicy;
 use App\Policies\UserPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -20,8 +21,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         User::class => UserPolicy::class,
-        Project::class => ProjectPolicy::class,
-        Setting::class => SettingPolicy::class,
+        LeaveRequest::class => LeaveRequestPolicy::class,
     ];
 
     /**

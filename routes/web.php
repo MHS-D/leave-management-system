@@ -2,8 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\ProjectProcessController;
+use App\Http\Controllers\LeaveRequestController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('login', [AuthController::class, 'loginView'])->name('login');
 Route::post('login', [AuthController::class, 'login'])->name('login');
-Route::get('register', [AuthController::class, 'registerView'])->name('register');
-Route::post('register', [AuthController::class, 'registerView'])->name('register');
-Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::middleware('auth')->group(function () {
@@ -38,20 +34,14 @@ Route::middleware('auth')->group(function () {
 			Route::post('pdf', 'exportPdf')->name('users.export.pdf');
 		});
 	});
-	Route::apiResource('users', UsersController::class);
-	Route::resource('projects', ProjectController::class);
 
-    Route::get('projects-proccess', [ProjectProcessController::class,'index'])->name('projects.proccess.index');
-
-    Route::post('get-project-info', [ProjectController::class,'getProjectInfo'])->name('project.getInfo');
-    Route::post('update-project-status', [ProjectController::class,'updateStatus'])->name('project.updateStatus');
+	Route::resource('users', UsersController::class);
+	Route::resource('leave-requests', LeaveRequestController::class);
 
 
-    /* For upcoming update */
-    // Route::prefix('settings')->controller(SettingController::class)->group(function () {
-	// 	Route::get('', 'index')->name('settings.index');
-	// 	Route::post('', 'update')->name('settings.update');
-	// });
+    Route::get('get-request-info/{leave_request}', [LeaveRequestController::class,'getRequestInfo'])->name('request.getInfo');
+    Route::post('update-project-status', [LeaveRequestController::class,'updateStatus'])->name('request.updateStatus');
 
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 });

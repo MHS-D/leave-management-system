@@ -22,13 +22,7 @@ class RoleSeeder extends Seeder
 
         Role::truncate();
         Role::create(['name' => config('settings.roles.names.adminRole')]);
-        Role::create(['name' => config('settings.roles.names.department1Role')]);
-        Role::create(['name' => config('settings.roles.names.department2Role')]);
-        Role::create(['name' => config('settings.roles.names.department3Role')]);
-        Role::create(['name' => config('settings.roles.names.department4Role')]);
-        Role::create(['name' => config('settings.roles.names.department5Role')]);
-        Role::create(['name' => config('settings.roles.names.department6Role')]);
-        Role::create(['name' => config('settings.roles.names.subAdminRole')]);
+        Role::create(['name' => config('settings.roles.names.employeeRole')]);
 
         Schema::enableForeignKeyConstraints();
     }

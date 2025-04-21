@@ -7,7 +7,7 @@
 <!-- Login basic -->
 <div class="card mt">
     <div class="card-body">
-{{--         <a href="index.html" class="brand-logo">
+        <a href="index.html" class="brand-logo">
             <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
                 <defs>
                     <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -31,8 +31,8 @@
                     </g>
                 </g>
             </svg>
-            <h2 class="brand-text text-primary ms-1">Vuexy</h2>
-        </a> --}}
+            <h2 class="brand-text text-primary ms-1">Admin Panel</h2>
+        </a>
 
         <h4 class="card-title mb-1">{{ __('strings.LOGIN_WELCOME_MESSAGE') }}</h4>
 
@@ -45,9 +45,6 @@
             <div class="mb-1">
                 <div class="d-flex justify-content-between">
                     <label class="form-label" for="login-password">{{ __('strings.PASSWORD') }}</label>
-                    {{-- <a href="auth-forgot-password-basic.html">
-                        <small>Forgot Password?</small>
-                    </a> --}}
                 </div>
                 <div class="input-group input-group-merge form-password-toggle">
                     <input type="password" class="form-control form-control-merge" id="login-password" name="password" tabindex="2" aria-describedby="login-password" />

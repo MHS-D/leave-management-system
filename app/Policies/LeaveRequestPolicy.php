@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Project;
+use App\Models\LeaveRequest;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ProjectPolicy
+class LeaveRequestPolicy
 {
     use HandlesAuthorization;
 
@@ -18,19 +18,19 @@ class ProjectPolicy
      */
     public function viewAny(User $user)
     {
-        return true;
+        return $user?->hasRole(config('settings.roles.names.adminRole')) || $user?->hasRole(config('settings.roles.names.employeeRole')) ;
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Project  $project
+     * @param  \App\Models\LeaveRequest  $leave_request
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Project $project)
+    public function view(User $user, LeaveRequest $leave_request)
     {
-        return true;
+        return $leave_request->user_id == $user->id;
     }
 
     /**
@@ -41,7 +41,7 @@ class ProjectPolicy
      */
     public function create(User $user)
     {
-        return $user?->hasRole(config('settings.roles.names.adminRole')) || $user?->hasRole(config('settings.roles.names.subAdminRole'));
+        return $user?->hasRole(config('settings.roles.names.employeeRole'));
     }
 
        /**
@@ -52,29 +52,29 @@ class ProjectPolicy
      */
     public function edit(User $user)
     {
-        return $user?->hasRole(config('settings.roles.names.adminRole')) || $user?->hasRole(config('settings.roles.names.subAdminRole'));
+        return $user?->hasRole(config('settings.roles.names.adminRole')) || $user?->hasRole(config('settings.roles.names.employeeRole'));
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Project  $project
+     * @param  \App\Models\LeaveRequest  $leave_request
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Project $project)
+    public function update(User $user, LeaveRequest $leave_request)
     {
-        return $user?->hasRole(config('settings.roles.names.adminRole')) || $user?->hasRole(config('settings.roles.names.subAdminRole')) ||  $user?->hasRole(config('settings.roles.names.department6Role'));
+        return $user?->hasRole(config('settings.roles.names.adminRole')) || $user?->hasRole(config('settings.roles.names.employeeRole'));
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Project  $project
+     * @param  \App\Models\LeaveRequest  $leave_request
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Project $project)
+    public function delete(User $user, LeaveRequest $leave_request)
     {
         return $user?->hasRole(config('settings.roles.names.adminRole'));
     }
@@ -87,6 +87,16 @@ class ProjectPolicy
      */
     public function exportDatatable(User $user)
     {
-        return $user?->hasRole(config('settings.roles.names.adminRole')) || $user?->hasRole(config('settings.roles.names.subAdminRole'));
+        return $user?->hasRole(config('settings.roles.names.adminRole')) || $user?->hasRole(config('settings.roles.names.employeeRole'));
+    }
+
+    public function getRequestInfo(User $user)
+    {
+        return $user?->hasRole(config('settings.roles.names.adminRole'));
+    }
+
+    public function updateStatus(User $user)
+    {
+        return $user?->hasRole(config('settings.roles.names.adminRole'));
     }
 }

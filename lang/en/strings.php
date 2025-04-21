@@ -13,13 +13,14 @@ return [
     'USER_NOT_FOUND' => 'User not found',
     'SETTINGS' => 'Settings fetched successfully',
     'LANGUAGE_CHANGED_SUCCESSFULLY' => 'Language changed successfully',
+    'ACTION_FORBIDDEN' => 'Action forbidden',
 
 
     // Constants
     'ID' => 'ID',
     'LOGIN_TITLE' => 'Login',
     'REGISTER_TITLE' => 'Register',
-    'LOGIN_WELCOME_MESSAGE' => 'Welcome to :app_name! 👋',
+    'LOGIN_WELCOME_MESSAGE' => 'Welcome Back! 👋',
     'REMEMBER_ME' => 'Remember Me',
     'LOGIN_BUTTON' => 'Sign in',
     'PASSWORD' => 'Password',
@@ -28,12 +29,10 @@ return [
     'EMAIL_OR_USERNAME' => 'Email or Username',
     'USERNMAE' => 'Username',
     'WELCOME_BACK' => 'Welcome back! 👋',
-    'WEBSITE_TITLE' => 'Project Management System',
+    'WEBSITE_TITLE' => 'Internal Leave Management System',
     'ACCOUNT_NOT_ACTIVE' => 'Account not active',
     'LATEST_STATUS_DATE' => 'Latest Status Date',
-    'CHOOSE_DEPARTMENT' => 'Choose Department',
     'SOMETHING_WENT_WRONG' => 'Something went wrong',
-    'DEPARTMENT' => 'Department',
     'ADDITIONAL_INFORMATION' => 'Additional Information',
     'LANGUAGE' => 'Language',
     'ENGLISH' => 'English',
@@ -48,17 +47,12 @@ return [
 
     //  roles
     config('settings.roles.names.adminRole') => 'Admin',
-    config('settings.roles.names.department1Role') => 'Department1',
-    config('settings.roles.names.department2Role') => 'Department2',
-    config('settings.roles.names.department3Role') => 'Department3',
-    config('settings.roles.names.department4Role') => 'Department4',
-    config('settings.roles.names.department5Role') => 'Department5',
-    config('settings.roles.names.department6Role') => 'Department6',
-    config('settings.roles.names.subAdminRole') => 'SubAdmin',
+    config('settings.roles.names.employeeRole') => 'Employee',
 
     // STATUS
     'ACTIVE' => 'Active',
     'UNACTIVE' => 'Unactive',
+
 
     //Dashboard
     'ACTIVE_USERS' => 'Active Users',
@@ -66,27 +60,14 @@ return [
     'USERS_TOTAL' => 'Users Total',
     'ADD_USER' => 'Add User',
     'UPDATE_USER' => 'Update User',
-    'ACTIVE_PROJECTS' => 'Active Projects',
-    'PROJECTS' => 'Projects',
-    'PROJECT_DONE' => 'Projects Done',
-    'PROJECT_IN_CREATED_CASE' => 'Projects In Created Case',
-    'PROJECT_IN_CAS1' => 'Projects In Case 1',
-    'PROJECT_IN_CAS2' => 'Projects In Case 2',
-    'PROJECT_IN_CAS3' => 'Projects In Case 3',
-    'PROJECT_IN_CAS4' => 'Projects In Case 4',
-    'PROJECT_DAYS_NUMBER' => 'Days Number',
-    'PROCCESSES' => 'Proccesses',
     'STATUS_DATE' => 'Status Date',
-    'PROJECTS_IN_DEPARTMENT2' => 'projects in department2',
-    'PROJECTS_IN_DEPARTMENT3' => 'projects in department3',
-    'PROJECTS_IN_DEPARTMENT4' =>    'projects in department4',
-    'NUMBER_OF_PROJECT_POSITIONS' => 'number of project positions',
-    'NUMBER_OF_ASSIGNMENTS_BOOK' => 'number of assignments book',
-    'NUMBER_OF_ASSIGNMENTS_BOOK_SUBMITED_DATE' => 'number of assignments book submited date',
-    'NUMBER_OF_CONTRACTS' => 'number of contracts',
-    'NUMBER_OF_SIGNINGS_RECEIVED' => 'number of signings received',
-    'NUMBER_OF_WORK_STARTED' => 'number of work started',
-    'NUMBER_OF_ASSIGNMENTS_BOOK_SUBMITED_DATE' => 'number of assignments book submited date',
+    'EMPLOYEES_COUNT' => 'Employees Count',
+    'TOTAL_REQUESTS' => 'Total Requests',
+    'APPROVED_REQUESTS' => 'Approved Requests',
+    'PENDING_REQUESTS' => 'Pending Requests',
+    'REJECTED_REQUESTS' => 'Rejected Requests',
+
+
 
 
     // Buttons
@@ -110,48 +91,33 @@ return [
     'SELECT_ROLE' => 'Select Role',
 
 
-    // Projects
-    'PROJECTS' => 'Projects',
-    'ADD_PROJECT' => 'Create Project',
-    'UPDATE_PROJECT' => 'Update Project',
-    'PROJECT_CREATED_SUCCESSFULLY' => 'Project created successfully',
-    'PROJECT_UPDATED_SUCCESSFULLY' => 'Project updated successfully',
-    'PROJECT_DELETED_SUCCESSFULLY' => 'Project deleted successfully',
-    'ADDITIONAL_INFO_MISSING' => 'Additional Information Missing',
-
-    // Project inputs
-    'PROJECT_NAME' => 'Project Name',
-    'COMPANY' => 'Company',
-    'NUMBER_OF_BOOK' => 'Number Of Book',
-    'DATE_OF_BOOK' => 'Date Of Book',
+    //leave requests
+    'LEAVE_REQUESTS' => 'Leave Requests',
+    'USER_NAME' => 'User Name',
+    'START_DATE' => 'Start Date',
+    'END_DATE' => 'End Date',
+    'REASON' => 'Reason',
     'STATUS' => 'Status',
-    'PROCESS' => 'Process',
-    'PROJECT_CREATED_DATE' => 'Project Created At',
     'NOTE' => 'Note',
-    'STATUS_DATE' => 'Status Date',
-    'BUDGET' => 'Budget',
-    'INVITATION_DATE' => 'Invitation Date',
-    'PROJECT_POSITION' => 'Project Position',
-    'ASSIGNMENT_BOOK_NUMBER' => 'Assignment Book Number',
-    'ASSIGNMENT_BOOK_DATE' => 'Assignment Book Date',
-    'ASSIGNMENT_BOOK_SUBMITION_DATE' => 'Assignment Book Submition Date',
-    'CONTRACT_BOOK_NUMBER' => 'Contract Book Number',
-    'CONTRACT_BOOK_DATE' => 'Contract Book Date',
-    'SIGNATURE_RECEIPT_DATE' => 'Signature Receipt Date',
-    'WORK_STARTING_DATE' => 'Work Starting Date',
-
-
+    'CREATED_AT' => 'Created At',
+    'REQUESTED_AT' => 'Requested At',
+    'NEW_LEAVE_REQUEST' => 'New Leave Request',
+    'ADD_LEAVE_REQUEST' => 'Add Request',
+    'UPDATE_LEAVE_REQUEST' => 'Update Request',
+    'LEAVE_REQUEST_CREATED_SUCCESSFULLY' => 'Leave Request Created Successfully',
+    'LEAVE_REQUEST_UPDATED_SUCCESSFULLY' => 'Leave Request Updated Successfully',
+    'LEAVE_REQUEST_DELETED_SUCCESSFULLY' => 'Leave Request Deleted Successfully',
 
     // Project Status
-    'CREATED' => 'Created',
-    'ONE_INPROGRESS' => 'Two Inprogress',
-    'ONE_DONE' => 'Two Done',
-    'TWO_INPROGRESS' => 'Three Inprogress',
-    'TWO_DONE' => 'Three Done',
-    'THREE_INPROGRESS' => 'Four Inprogress',
-    'THREE_DONE' => 'Four Done',
-    'FOUR_INPROGRESS' => 'Five Inprogress',
-    'FOUR_DONE' => 'Five Done',
+    'REQUESTED' => 'Requested',
+    'APPROVED' => 'Approved',
+    'REJECTED' => 'Rejected',
+
+    'ARE_YOU_SURE' => 'Are you sure?',
+    'YOU_CAN_NOT_REVERT' => 'You will not be able to recover this imaginary file!',
+    'YES_DELETE' => 'Yes, delete it!',
+    'NO_CANCEL' => 'No, cancel!',
+
 
 
     ];

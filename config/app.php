@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'ar',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -239,21 +239,6 @@ return [
                         'route' => 'dashboard',
                         'icon' => 'home',
                         'active_criteria' => '/',
-                        // 'badge' => [
-                        //     'content' => '',
-                        // ]
-                        // 'children' => [
-                        //     [
-                        //         'label' => 'Dashboard',
-                        //         'url' => route('dashboard'),
-                        //         'icon' => '',
-                        //     ],
-                        //     [
-                        //         'label' => 'Dashboard',
-                        //         'url' => route('dashboard'),
-                        //         'icon' => '',
-                        //     ],
-                        // ]
                     ],
                     [
                         'label' => 'Users',
@@ -261,42 +246,28 @@ return [
                         'icon' => 'users',
                         'active_criteria' => 'users',
                         'can' => [
-                            // 'ability' => 'viewAny',
-                            // 'arguments' => new App\Models\User(),
-                            'roles' => ['admin'],
+                            'ability' => 'viewAny',
+                            'arguments' => new App\Models\User(),
+                            'roles' => [config('settings.roles.names.adminRole')],
                         ]
                     ],
 
 
                     [
-                        'label' => 'Projects',
-                        'route' => 'projects.index',
+                        'label' => 'Leave Requests',
+                        'route' => 'leave-requests.index',
                         'icon' => 'file-text',
-                        'active_criteria' => 'projects',
+                        'active_criteria' => 'leave-requests',
+                        'can' => [
+                            'ability' => 'viewAny',
+                            'arguments' => new App\Models\LeaveRequest(),
+                        ]
                     ],
 
                 ]
             ],
 
-            // [
-            //     'label' => '',
-            //     'items' => [
-            //         [
-            //             'label' => 'Settings',
-            //             'route' => 'settings.index',
-            //             'icon' => 'settings',
-            //             'active_criteria' => 'settings',
-            //             'can' => [
-            //                 'ability' => 'viewAny',
-            //                 'arguments' => new App\Models\Setting()
-            //             ]
-            //             // 'badge' => [
-            //             //     'content' => '2',
-            //             //     'type' => 'light-danger'
-            //             // ]
-            //         ]
-            //     ]
-            // ],
+
             [
                 'label' => '',
                 'items' => [

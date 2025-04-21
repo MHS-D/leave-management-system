@@ -109,15 +109,6 @@ class UsersController extends Controller
 
             $user->syncRoles($request->role);
 
-            // if ($request->permissions_by_role) {
-            //     // synchronize the user's permissions based on their roles
-            //     $user->syncPermissions();
-            // } else {
-            //     // synchronize the user's permissions based on the selected ones
-            //     $user->roles()->detach();
-            //     $user->syncPermissions(Permission::find($request->permissions));
-            // }
-
             DB::commit();
 
             return [

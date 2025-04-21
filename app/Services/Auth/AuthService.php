@@ -89,7 +89,7 @@ class AuthService
         try {
             if ($user->status == Status::ACTIVE && $user->roles()->exists()) {
 
-                $route = in_array($user->role,[config('settings.roles.names.adminRole'),config('settings.roles.names.subAdminRole')]) ? route('dashboard') : route('projects.index');
+                $route = in_array($user->role,[config('settings.roles.names.adminRole'),config('settings.roles.names.subAdminRole')]) ? route('dashboard') : route('leave-requests.index');
 
                 return self::ajaxRedirectUrl($route);
             } else {

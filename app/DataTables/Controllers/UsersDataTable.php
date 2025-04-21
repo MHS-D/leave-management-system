@@ -125,44 +125,44 @@ class UsersDataTable extends DataTable
     {
         $parameters = ['buttons' => []];
 
-        // if (auth()->user()?->can('exportDatatable', User::class)) {
-        //     $parameters["buttons"][] = [
-        //         [
-        //             "extend" => 'collection',
-        //             "className" => 'btn btn-outline-secondary dropdown-toggle me-2',
-        //             "text" => 'Export',
-        //             "buttons" => [
-        //                 [
-        //                     "text" => 'Excel',
-        //                     "className" => 'dropdown-item export-selected-rows',
-        //                     "attr" => [
-        //                         "href" => route('users.export.excel'),
-        //                         "target" => "_blank",
-        //                     ],
-        //                     "tag" => "a",
-        //                 ],
-        //                 [
-        //                     "text" => 'CSV',
-        //                     "className" => 'dropdown-item export-selected-rows',
-        //                     "attr" => [
-        //                         "href" => route('users.export.csv'),
-        //                         "target" => "_blank",
-        //                     ],
-        //                     "tag" => "a",
-        //                 ],
-        //                 [
-        //                     "text" => 'PDF',
-        //                     "className" => 'dropdown-item export-selected-rows',
-        //                     "attr" => [
-        //                         "href" => route('users.export.pdf'),
-        //                         "target" => "_blank",
-        //                     ],
-        //                     "tag" => "a",
-        //                 ],
-        //             ],
-        //         ]
-        //     ];
-        // }
+        if (auth()->user()?->can('exportDatatable', User::class)) {
+            $parameters["buttons"][] = [
+                [
+                    "extend" => 'collection',
+                    "className" => 'btn btn-outline-secondary dropdown-toggle me-2',
+                    "text" => 'Export',
+                    "buttons" => [
+                        [
+                            "text" => 'Excel',
+                            "className" => 'dropdown-item export-selected-rows',
+                            "attr" => [
+                                "href" => route('users.export.excel'),
+                                "target" => "_blank",
+                            ],
+                            "tag" => "a",
+                        ],
+                        [
+                            "text" => 'CSV',
+                            "className" => 'dropdown-item export-selected-rows',
+                            "attr" => [
+                                "href" => route('users.export.csv'),
+                                "target" => "_blank",
+                            ],
+                            "tag" => "a",
+                        ],
+                        [
+                            "text" => 'PDF',
+                            "className" => 'dropdown-item export-selected-rows',
+                            "attr" => [
+                                "href" => route('users.export.pdf'),
+                                "target" => "_blank",
+                            ],
+                            "tag" => "a",
+                        ],
+                    ],
+                ]
+            ];
+        }
 
         // Create button
         if (auth()->user()?->can('create', User::class)) {
